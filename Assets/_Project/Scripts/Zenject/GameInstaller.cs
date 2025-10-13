@@ -1,9 +1,18 @@
+using CameraSystem;
 using UnityEngine;
 using Zenject;
 
-public class GameInstaller : MonoInstaller
+namespace Common
 {
-    public override void InstallBindings()
+    public class GameInstaller : MonoInstaller
     {
+        [SerializeField] private CameraConfig _cameraConfig;
+        public override void InstallBindings()
+        {
+            SignalBusInstaller.Install(Container);
+            Container.DeclareSignal<CameraRotatedSignal>();
+
+            Container.BindInstance(_cameraConfig).AsSingle();
+        }
     }
 }
