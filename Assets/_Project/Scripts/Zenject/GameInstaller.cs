@@ -1,5 +1,6 @@
 using CameraSystem;
 using UnityEngine;
+using WeatherSystem;
 using Zenject;
 
 namespace Common
@@ -11,6 +12,9 @@ namespace Common
         {
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<CameraRotatedSignal>();
+            Container.DeclareSignal<WeatherDataReadySignal>();
+
+            Container.BindInterfacesAndSelfTo<WeatherService>().AsSingle();
 
             Container.BindInstance(_cameraConfig).AsSingle();
         }
