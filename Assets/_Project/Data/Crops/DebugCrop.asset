@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6365d8eaf69ffbb49b9cc7214619d879, type: 3}
+  m_Name: DebugCrop
+  m_EditorClassIdentifier: 
+  <CropName>k__BackingField: Debug
+  <GrowthStages>k__BackingField:
+  - Sprite: {fileID: 1196681177, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+    TimeToNextStage: 5
+  - Sprite: {fileID: -1691523159, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+    TimeToNextStage: 7
+  - Sprite: {fileID: -87398353, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+    TimeToNextStage: 3
+  - Sprite: {fileID: -1406747965, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+    TimeToNextStage: 2
+  <WaterNeededToGrow>k__BackingField: 0.2
