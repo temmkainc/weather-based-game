@@ -54,7 +54,7 @@ namespace Common
         private void OnDestroy()
         {
             _cts?.Cancel();
-            _cts.Dispose();
+            _cts?.Dispose();
         }
     }
 }
