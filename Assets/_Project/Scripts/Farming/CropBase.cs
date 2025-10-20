@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 namespace Farming
 {
     public class CropBase : MonoBehaviour
     {
+        public event Action GrowUpEvent;
+        public event Action DieEvent;
+
         [Header("References")]
         [SerializeField] private CropData _data;
         [SerializeField] private CropSceneContainer _sceneContainer;
@@ -18,23 +22,19 @@ namespace Farming
         private int _currentStage = -1;
         private bool _isDead = false;
         private bool _isReady = false;
+        private bool _isPlanted = false;
 
-        private void Start()
+        public void Plant()
         {
+            // _data = data;
             _waterLevel = 1f;
-            UpdateStage();
-        }
-
-        private void Setup(CropData data)
-        {
-            _data = data;
-            _waterLevel = 1f;
+            _isPlanted = true;
             UpdateStage();
         }
 
         private void Update()
         {
-            if (_isDead || _isReady) return;
+            if (_isDead || _isReady || !_isPlanted) return;
 
             _waterLevel -= _waterDrainRate * Time.deltaTime;
             _waterLevel = Mathf.Clamp01(_waterLevel);
@@ -88,7 +88,7 @@ namespace Farming
             _isReady = true;
             _sceneContainer.CropUI.SetActive(false);
 
-            Debug.Log($"{_data.CropName} is Ready");
+            GrowUpEvent?.Invoke();
         }
 
         public void Water(float amount = 0.5f)
@@ -108,6 +108,7 @@ namespace Farming
         private void Die()
         {
             _isDead = true;
+            DieEvent?.Invoke();
             Debug.Log($"{_data.CropName} died.");
         }
     }
