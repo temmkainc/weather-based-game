@@ -15,9 +15,9 @@ MonoBehaviour:
   <CropName>k__BackingField: Debug
   <GrowthStages>k__BackingField:
   - Sprite: {fileID: 1196681177, guid: 2f90c83a55af18540a98204358d91785, type: 3}
-    TimeToNextStage: 5
+    TimeToNextStage: 3
   - Sprite: {fileID: -1691523159, guid: 2f90c83a55af18540a98204358d91785, type: 3}
-    TimeToNextStage: 7
+    TimeToNextStage: 3
   - Sprite: {fileID: -87398353, guid: 2f90c83a55af18540a98204358d91785, type: 3}
     TimeToNextStage: 3
   - Sprite: {fileID: -1406747965, guid: 2f90c83a55af18540a98204358d91785, type: 3}

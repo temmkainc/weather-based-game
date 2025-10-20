@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Player
+namespace PlayerSystem
 {
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour

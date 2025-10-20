@@ -12,14 +12,7 @@ namespace Common
         [Inject] private CameraConfig _config;
         [Inject] private SignalBus _signalBus;
 
-        private float _rotationSpeed;
-
         private CancellationTokenSource _cts;
-
-        private void Awake()
-        {
-            _rotationSpeed = _config.RotationSpeed;
-        }
 
         private void OnEnable() => _signalBus.Subscribe<CameraRotatedSignal>(OnCameraRotated);
         private void OnDisable() => _signalBus.Unsubscribe<CameraRotatedSignal>(OnCameraRotated);
@@ -39,13 +32,13 @@ namespace Common
                     token.ThrowIfCancellationRequested();
 
                     Vector3 currentEuler = transform.rotation.eulerAngles;
-                    float newY = Mathf.MoveTowardsAngle(currentEuler.y, targetY, _rotationSpeed * Time.deltaTime);
+                    float newY = Mathf.MoveTowardsAngle(currentEuler.y, targetY, _config.RotationSpeed * Time.deltaTime);
                     transform.rotation = Quaternion.Euler(0f, newY, 0f);
 
                     await UniTask.Yield(token);
                 }
             }
-            catch (OperationCanceledException e)
+            catch (OperationCanceledException)
             {
                 // Rotation canceled by a new signal - nothing to do
             }
