@@ -19,6 +19,11 @@ namespace Farming
     {
         public event Action StateChangedEvent;
 
+        [SerializeField] private SpriteRenderer _renderer;
+
+        [SerializeField] private Sprite _emptySprite;
+        [SerializeField] private Sprite _dugSprite;
+
         [SerializeField] private CropBase _currentCrop;
         [SerializeField] private Transform _cropSlot;
         [Inject] private DiContainer _diContainer;
@@ -26,6 +31,11 @@ namespace Farming
         private PotState _currentState = PotState.Empty;
 
         public PotState CurrentState => _currentState;
+
+        private void Start()
+        {
+            _renderer.sprite = _emptySprite;
+        }
 
         public string GetInteractionName()
         {
@@ -60,6 +70,7 @@ namespace Farming
         private void Dig()
         {
             Debug.Log("Digged the pot");
+            _renderer.sprite = _dugSprite;
             SetState(PotState.Dug);
         }
 
@@ -87,6 +98,7 @@ namespace Farming
             Debug.Log("Harvested the plant");
             Destroy(_currentCrop.gameObject);
             _currentCrop = null;
+            _renderer.sprite = _emptySprite;
             SetState(PotState.Empty);
         }
 

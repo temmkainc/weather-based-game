@@ -117,8 +117,8 @@ TextureImporter:
         y: 900
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.40848732, y: 0.2263739}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -139,8 +139,8 @@ TextureImporter:
         y: 900
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.46628448, y: 0.20710815}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -161,8 +161,8 @@ TextureImporter:
         y: 900
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.46628493, y: 0.27453858}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -183,8 +183,8 @@ TextureImporter:
         y: 900
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.58669615, y: 0.11077881}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,6 +193,50 @@ TextureImporter:
       bones: []
       spriteID: 6390bb289ac8ec246ae7fa3eae35c597
       internalID: -1406747965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06a3e2dc17be4d4cafa1b5caed88f5b
+      internalID: -2112919594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 800
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31363a8fc3a5444492514102c63007b
+      internalID: -2102324593
       vertices: []
       indices: 
       edges: []
@@ -215,6 +259,8 @@ TextureImporter:
       crops_spritesheet_1: -1691523159
       crops_spritesheet_2: -87398353
       crops_spritesheet_3: -1406747965
+      crops_spritesheet_4: -2112919594
+      crops_spritesheet_5: -2102324593
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
