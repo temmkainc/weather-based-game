@@ -24,17 +24,13 @@ namespace CameraSystem
 
         private void Update()
         {
-            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            if (Input.GetKey(KeyCode.Equals) || Input.GetKey(KeyCode.KeypadPlus))
+                _targetZoom -= zoomSpeed * Time.deltaTime;
 
-            if (Mathf.Abs(scroll) > 0.01f)
-            {
-                if (_cam.orthographic)
-                    _targetZoom -= scroll * zoomSpeed;
-                else
-                    _targetZoom -= scroll * zoomSpeed * 10f;
+            if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
+                _targetZoom += zoomSpeed * Time.deltaTime;
 
-                _targetZoom = Mathf.Clamp(_targetZoom, minZoom, maxZoom);
-            }
+            _targetZoom = Mathf.Clamp(_targetZoom, minZoom, maxZoom);
 
             if (_cam.orthographic)
             {

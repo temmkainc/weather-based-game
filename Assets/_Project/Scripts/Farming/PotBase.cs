@@ -1,4 +1,5 @@
 using Common;
+using Farming.Tools;
 using PlayerSystem;
 using System;
 using UnityEngine;
@@ -45,9 +46,24 @@ namespace Farming
                 PotState.Dug => "Plant Seeds",
                 PotState.Planted => "Water",
                 PotState.ReadyToHarvest => "Harvest",
+                PotState.Dead => "Clear",
                 _ => string.Empty,
             };
         }
+
+        public Type GetRequiredToolType()
+        {
+            return _currentState switch
+            {
+                PotState.Empty => typeof(ShovelTool),
+                PotState.Dug => null,
+                PotState.Planted => typeof(WateringCanTool),
+                PotState.ReadyToHarvest => null,
+                PotState.Dead => typeof(ShovelTool),
+                _ => null,
+            };
+        }
+
         public void Interact(Player player)
         {
             switch (_currentState)
@@ -64,17 +80,20 @@ namespace Farming
                 case PotState.ReadyToHarvest:
                     Harvest();
                     break;
+                case PotState.Dead:
+                    ClearPlant();
+                    break;
             }
         }
 
-        private void Dig()
+        public void Dig()
         {
             Debug.Log("Digged the pot");
             _renderer.sprite = _dugSprite;
             SetState(PotState.Dug);
         }
 
-        private void WaterCrop()
+        public void WaterCrop()
         {
             Debug.Log("Watered the pot");
             _currentCrop.Water();
@@ -96,6 +115,11 @@ namespace Farming
         private void Harvest()
         {
             Debug.Log("Harvested the plant");
+            ClearPlant();
+        }
+
+        private void ClearPlant()
+        {
             Destroy(_currentCrop.gameObject);
             _currentCrop = null;
             _renderer.sprite = _emptySprite;
