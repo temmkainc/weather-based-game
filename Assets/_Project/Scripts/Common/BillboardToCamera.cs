@@ -14,8 +14,26 @@ namespace Common
 
         private CancellationTokenSource _cts;
 
-        private void OnEnable() => _signalBus.Subscribe<CameraRotatedSignal>(OnCameraRotated);
-        private void OnDisable() => _signalBus.Unsubscribe<CameraRotatedSignal>(OnCameraRotated);
+        private void OnEnable()
+        {
+            _signalBus.Subscribe<CameraRotatedSignal>(OnCameraRotated);
+            AlignToCameraInstantly();
+        }
+
+        private void OnDisable()
+        {
+            _signalBus.Unsubscribe<CameraRotatedSignal>(OnCameraRotated);
+        }
+
+        private void AlignToCameraInstantly()
+        {
+            var camera = Camera.main;
+            if (camera == null)
+                return;
+
+            float yRotation = camera.transform.rotation.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
+        }
 
         private async void OnCameraRotated(CameraRotatedSignal signal)
         {

@@ -15,7 +15,7 @@ namespace Farming
 
         [Header("Water / Drying")]
         [SerializeField] private float _waterLevel;
-        [SerializeField] private float _waterDrainRate = 0.02f;
+        [SerializeField] private float _waterDrainRate = 0.1f;
 
         [Header("Growth")]
         [SerializeField] private float _elapsedGrowthTime = 0f;
