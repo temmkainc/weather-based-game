@@ -24,11 +24,9 @@ namespace CameraSystem
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Equals) || Input.GetKey(KeyCode.KeypadPlus))
-                _targetZoom -= zoomSpeed * Time.deltaTime;
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-            if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
-                _targetZoom += zoomSpeed * Time.deltaTime;
+            _targetZoom -= scroll * zoomSpeed * 100f * Time.deltaTime;
 
             _targetZoom = Mathf.Clamp(_targetZoom, minZoom, maxZoom);
 
