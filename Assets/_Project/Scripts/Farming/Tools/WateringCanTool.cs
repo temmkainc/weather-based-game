@@ -1,21 +1,23 @@
 using Common;
 using PlayerSystem;
+using UnityEngine;
 
 namespace Farming.Tools
 {
-    public class WateringCanTool : ITool
+    [CreateAssetMenu(fileName = "WateringCan", menuName = "Farming/Tool/Watering Can")]
+    public class WateringCanTool : ToolData
     {
-        public string Name => "Watering Can";
-
-        public bool CanUseOn(IInteractable interactable)
+        public override bool CanUseOn(IInteractable interactable)
         {
             return interactable is PotBase pot && pot.CurrentState == PotState.Planted;
         }
 
-        public void Use(Player player, IInteractable interactable)
+        public override void Use(Player player, IInteractable interactable)
         {
-            if (interactable is PotBase pot)
-                pot.WaterCrop();
+            if (interactable is not PotBase pot)
+                return;
+
+            pot.WaterCrop();
         }
     }
 }

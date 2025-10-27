@@ -5,20 +5,16 @@ namespace Farming.Tools
 {
     public class ToolManager : MonoBehaviour
     {
-        [SerializeField] private List<ITool> _tools = new();
+        [SerializeField] private ToolManagerSceneContainer _sceneContainer;
+        [SerializeField] private List<ToolData> _tools;
         private int _currentIndex;
 
-        public ITool CurrentTool => _tools.Count > 0 ? _tools[_currentIndex] : null;
+        public ToolData CurrentTool => _tools.Count > 0 ? _tools[_currentIndex] : null;
 
         private void Awake()
         {
-            if (_tools.Count == 0)
-            {
-                _tools.Add(new ShovelTool());
-                _tools.Add(new WateringCanTool());
-            }
-
             _currentIndex = 0;
+            UpdateToolUI();
         }
 
         private void Update()
@@ -33,17 +29,15 @@ namespace Farming.Tools
         private void NextTool()
         {
             if (_tools.Count == 0) return;
-
-            _currentIndex = (_currentIndex + 1) % _tools.Count;
-            Debug.Log($"Selected Tool: {CurrentTool.Name}");
+            int nextIndex = (_currentIndex + 1) % _tools.Count;
+            SetTool(nextIndex);
         }
 
         private void PreviousTool()
         {
             if (_tools.Count == 0) return;
-
-            _currentIndex = (_currentIndex - 1 + _tools.Count) % _tools.Count;
-            Debug.Log($"Selected Tool: {CurrentTool.Name}");
+            int prevIndex = (_currentIndex - 1 + _tools.Count) % _tools.Count;
+            SetTool(prevIndex);
         }
 
         public void SetTool(int index)
@@ -52,6 +46,17 @@ namespace Farming.Tools
             if (_currentIndex == index) return;
 
             _currentIndex = index;
+            UpdateToolUI();
+        }
+
+        private void UpdateToolUI()
+        {
+            if (_sceneContainer == null || CurrentTool is not ToolData toolData)
+                return;
+
+            _sceneContainer.CurrentToolImage.sprite = toolData.Icon;
+
+            Debug.Log($"Selected Tool: {CurrentTool.Name}");
         }
     }
 }
