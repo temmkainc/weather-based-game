@@ -21,10 +21,13 @@ namespace Inventory
 
         private void HandleItemSelected(InventoryItem item)
         {
-            if (item.Data.ToolReference != null)
+            if (item == null)
             {
-                _toolManager.SetTool(item.Data.ToolReference);
+                _toolManager.SetTool(null);
+                return;
             }
+
+            _toolManager.SetTool(item.Data.ToolReference);
         }
     }
 }

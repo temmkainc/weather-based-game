@@ -22,8 +22,10 @@ namespace Farming
 
         [SerializeField] private SpriteRenderer _renderer;
 
-        [SerializeField] private Sprite _emptySprite;
-        [SerializeField] private Sprite _dugSprite;
+        [Inject] PotSceneContainer _sceneContainer;
+
+        private Sprite _emptySprite;
+        private Sprite _dugSprite;
 
         [SerializeField] private CropBase _currentCrop;
         [SerializeField] private Transform _cropSlot;
@@ -35,6 +37,11 @@ namespace Farming
 
         private void Start()
         {
+            var random = DeterministicRandom.Next(0, _sceneContainer.SpriteSets.Length);
+
+            _emptySprite = _sceneContainer.SpriteSets[random].EmptySprite;
+            _dugSprite = _sceneContainer.SpriteSets[random].DugSprite;
+
             _renderer.sprite = _emptySprite;
         }
 

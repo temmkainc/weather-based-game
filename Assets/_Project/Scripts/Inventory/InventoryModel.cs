@@ -56,7 +56,11 @@ namespace Inventory
 
         public void SelectItem(InventoryItem item)
         {
-            if (!_items.Contains(item)) return;
+            if (!_items.Contains(item))
+            {
+                OnItemSelected?.Invoke(null);
+                return;
+            }
             OnItemSelected?.Invoke(item);
         }
     }
