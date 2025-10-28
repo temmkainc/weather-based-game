@@ -1,4 +1,5 @@
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -76,6 +77,12 @@ namespace Inventory.UI
                 var slot = Instantiate(_slotPrefab, transform);
                 _slotImages[i] = slot.GetComponentsInChildren<Image>(includeInactive: true)
                     .FirstOrDefault(img => img.gameObject != slot);
+
+                var slotIndex_TMP = slot.GetComponentsInChildren<TMP_Text>(includeInactive: true)
+                    .FirstOrDefault(tmp => tmp.gameObject.name.Contains("Index"));
+
+                slotIndex_TMP.gameObject.SetActive(true);
+                slotIndex_TMP.text = (i + 1).ToString();
 
                 int index = i;
                 var button = slot.GetComponent<Button>();
