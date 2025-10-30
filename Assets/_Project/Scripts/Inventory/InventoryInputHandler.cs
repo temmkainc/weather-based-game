@@ -1,26 +1,30 @@
 using UnityEngine;
 using Zenject;
 
-namespace Inventory
+namespace Inventory.UI
 {
-    public class HotbarInputHandler : MonoBehaviour
+    public class InventoryInputHandler : MonoBehaviour
     {
-        private InventoryHotbarManager _hotbarManager;
+        [Inject] private InventoryFullView _inventoryView;
+        [Inject] private InventoryHotbarView _hotbarView;
 
-        [Inject]
-        public void Construct(InventoryHotbarManager hotbarManager)
-        {
-            _hotbarManager = hotbarManager;
-        }
+        private bool _isOpen;
 
         private void Update()
         {
-            if (_hotbarManager == null) return;
-
-            for (int i = 0; i < _hotbarManager.Hotbar.Length; i++)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-                    _hotbarManager.SelectSlot(i);
+                _isOpen = !_isOpen;
+                if (_isOpen)
+                {
+                    _hotbarView.Hide();
+                    _inventoryView.Show();
+                }
+                else
+                {
+                    _hotbarView.Show();
+                    _inventoryView.Hide();
+                }
             }
         }
     }

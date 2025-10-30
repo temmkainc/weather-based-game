@@ -17,6 +17,7 @@ namespace Inventory
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField] public Sprite Icon { get; private set; }
         [field: SerializeField] public ItemType Type { get; private set; }
+        [field: SerializeField] public bool IsStackable { get; private set; }
 
         [field: SerializeField] public ToolData ToolReference { get; private set; }
     }

@@ -55,7 +55,7 @@ namespace PlayerSystem
             var requiredType = _currentInteractable.GetRequiredToolType();
             var currentTool = _player.ToolManager.CurrentTool;
 
-            if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 if (requiredType != null && (currentTool == null || currentTool.GetType() != requiredType))
                 {

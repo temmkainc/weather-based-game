@@ -1,5 +1,6 @@
 using Common;
 using Farming.Tools;
+using Inventory;
 using PlayerSystem;
 using System;
 using UnityEngine;
@@ -22,7 +23,10 @@ namespace Farming
 
         [SerializeField] private SpriteRenderer _renderer;
 
+        [SerializeField] private ItemData _harvestCropData;
+
         [Inject] PotSceneContainer _sceneContainer;
+        [Inject] InventoryModel _inventoryModel;
 
         private Sprite _emptySprite;
         private Sprite _dugSprite;
@@ -122,6 +126,7 @@ namespace Farming
         private void Harvest()
         {
             Debug.Log("Harvested the plant");
+            _inventoryModel.AddItemToFirstFreeSlot(_harvestCropData, 1);
             ClearPlant();
         }
 
