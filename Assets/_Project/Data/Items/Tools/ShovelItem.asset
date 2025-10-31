@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704d9487f8e3fa540895f67a0759011c, type: 3}
   m_Name: ShovelItem
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 1
   <Name>k__BackingField: Shovel
-  <Icon>k__BackingField: {fileID: -422634766, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  <Icon>k__BackingField: {fileID: -333505615, guid: 2f90c83a55af18540a98204358d91785, type: 3}
   <Type>k__BackingField: 2
+  <IsStackable>k__BackingField: 0
   <ToolReference>k__BackingField: {fileID: 11400000, guid: ae9f29e5f58d3e443b5da98b1c3f0e99, type: 2}
+  <CropSeeds>k__BackingField: {fileID: 0}

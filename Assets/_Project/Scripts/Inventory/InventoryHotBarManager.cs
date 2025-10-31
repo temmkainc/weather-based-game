@@ -8,11 +8,13 @@ namespace Inventory
     public class InventoryHotbarManager
     {
         public readonly InventoryHotbarView HotbarView;
+        public int SelectedSlotIndex => _selectedSlotIndex;
         public int Size => _size;
         public event Action<int> OnSlotSelected;
 
         private readonly InventoryModel _inventory;
         private readonly int _size;
+        private int _selectedSlotIndex;
 
         public InventoryHotbarManager(InventoryModel inventory, int size, InventoryHotbarView hotbarView)
         {
@@ -32,6 +34,7 @@ namespace Inventory
         public void SelectSlot(int index)
         {
             if (index < 0 || index >= Hotbar.Length) return;
+            _selectedSlotIndex = index;
             OnSlotSelected?.Invoke(index);
             _inventory.SelectItem(Hotbar[index]);
         }

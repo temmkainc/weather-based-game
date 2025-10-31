@@ -24,9 +24,9 @@ namespace Farming
         private bool _isReady = false;
         private bool _isPlanted = false;
 
-        public void Plant()
+        public void Plant(CropData data)
         {
-            // _data = data;
+            _data = data;
             _waterLevel = 1f;
             _isPlanted = true;
             UpdateStage();

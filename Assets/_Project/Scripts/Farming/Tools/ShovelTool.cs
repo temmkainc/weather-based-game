@@ -16,7 +16,6 @@ namespace Farming.Tools
         {
             if (interactable is not PotBase pot)
                 return;
-
             pot.Dig();
         }
     }

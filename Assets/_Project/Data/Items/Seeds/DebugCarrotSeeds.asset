@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 704d9487f8e3fa540895f67a0759011c, type: 3}
-  m_Name: DebugCropItem
+  m_Name: DebugCarrotSeeds
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 3
-  <Name>k__BackingField: Debug Crop
-  <Icon>k__BackingField: {fileID: -1406747965, guid: 2f90c83a55af18540a98204358d91785, type: 3}
-  <Type>k__BackingField: 1
+  <Name>k__BackingField: Debug Carrot Seeds
+  <Icon>k__BackingField: {fileID: -1471206992, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  <Type>k__BackingField: 0
   <IsStackable>k__BackingField: 1
-  <ToolReference>k__BackingField: {fileID: 0}
+  <ToolReference>k__BackingField: {fileID: 11400000, guid: 87e9bc6da995f894b9dfffdfd9698227, type: 2}
+  <CropSeeds>k__BackingField: {fileID: 11400000, guid: f59305eb5d05a9946a53cc373f984a1e, type: 2}

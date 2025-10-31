@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 704d9487f8e3fa540895f67a0759011c, type: 3}
-  m_Name: WateringCanItem
+  m_Name: DebugCarrotItem
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Watering Can
-  <Icon>k__BackingField: {fileID: -1083466885, guid: 2f90c83a55af18540a98204358d91785, type: 3}
-  <Type>k__BackingField: 2
-  <IsStackable>k__BackingField: 0
-  <ToolReference>k__BackingField: {fileID: 11400000, guid: 8be51214e3dc0d04caf59c488bd01ba5, type: 2}
+  <Name>k__BackingField: Debug Crop
+  <Icon>k__BackingField: {fileID: -1904402912, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  <Type>k__BackingField: 1
+  <IsStackable>k__BackingField: 1
+  <ToolReference>k__BackingField: {fileID: 0}
   <CropSeeds>k__BackingField: {fileID: 0}

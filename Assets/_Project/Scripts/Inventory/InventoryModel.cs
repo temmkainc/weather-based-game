@@ -7,6 +7,7 @@ namespace Inventory
     public class InventoryModel
     {
         public int Capacity { get; }
+        public InventoryItem SelectedItem { get; private set; }
 
         private readonly InventoryItem[] _items;
         public IReadOnlyList<InventoryItem> Items => _items;
@@ -127,10 +128,12 @@ namespace Inventory
         {
             if (!_items.Contains(item))
             {
+                SelectedItem = null;
                 OnItemSelected?.Invoke(null);
                 return;
             }
 
+            SelectedItem = item;
             OnItemSelected?.Invoke(item);
         }
 
