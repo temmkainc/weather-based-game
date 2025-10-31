@@ -1,6 +1,8 @@
 using Farming;
 using Farming.Tools;
+using Inventory;
 using UnityEngine;
+using Zenject;
 
 namespace PlayerSystem
 {
@@ -8,9 +10,17 @@ namespace PlayerSystem
     {
         public ToolManager ToolManager { get; private set; }
         public PlayerMovement Movement { get; private set; }
+        public InventoryModel InventoryModel { get; private set; }
+        public InventoryHotbarManager InventoryHotbarManager { get; private set; }
 
         public CropBase CropPrefab;
 
+        [Inject]
+        public void Construct(InventoryModel inventoryModel, InventoryHotbarManager inventoryHotbarManager)
+        {
+            InventoryModel = inventoryModel;
+            InventoryHotbarManager = inventoryHotbarManager;
+        }
 
         private void Awake()
         {

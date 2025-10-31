@@ -57,13 +57,19 @@ namespace PlayerSystem
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if (requiredType != null && (currentTool == null || currentTool.GetType() != requiredType))
+                if (requiredType == null)
                 {
-                    Debug.Log("You can`t do that with that tool");
+                    _currentInteractable.Interact(_player);
                     return;
                 }
 
-                _currentInteractable.Interact(_player);
+                if (currentTool == null || currentTool.GetType() != requiredType)
+                    return;
+
+                if (!currentTool.CanUseOn(_currentInteractable))
+                    return;
+
+                currentTool.Use(_player, _currentInteractable);
             }
         }
 

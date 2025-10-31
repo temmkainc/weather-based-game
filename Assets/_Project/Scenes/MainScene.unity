@@ -339,7 +339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 2110387121}
-  _harvestCropData: {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
   _currentCrop: {fileID: 0}
   _cropSlot: {fileID: 568241240}
 --- !u!4 &185738743
@@ -527,7 +526,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1126291}
-  _harvestCropData: {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
   _currentCrop: {fileID: 0}
   _cropSlot: {fileID: 1224064590}
 --- !u!4 &275142212
@@ -1347,7 +1345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1758940443}
-  _harvestCropData: {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
   _currentCrop: {fileID: 0}
   _cropSlot: {fileID: 1010819807}
 --- !u!4 &639131247
@@ -1446,7 +1443,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1765654965}
-  _harvestCropData: {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
   _currentCrop: {fileID: 0}
   _cropSlot: {fileID: 1332115761}
 --- !u!1001 &822517203
@@ -1792,6 +1788,7 @@ MonoBehaviour:
   - EmptySprite: {fileID: -1502221663, guid: faac095d381542c44a394c04fa197592, type: 3}
     DugSprite: {fileID: 1879401048, guid: faac095d381542c44a394c04fa197592, type: 3}
     WateredSprite: {fileID: -423128203, guid: faac095d381542c44a394c04fa197592, type: 3}
+  <CropBasePrefab>k__BackingField: {fileID: 520554929392664804, guid: 2d5c3156f78db5c46880a9ab6a202ded, type: 3}
 --- !u!4 &952499716
 Transform:
   m_ObjectHideFlags: 0
@@ -2150,6 +2147,8 @@ MonoBehaviour:
   _startingItems:
   - {fileID: 11400000, guid: 3b081306f7be61948913ca074cd1e844, type: 2}
   - {fileID: 11400000, guid: 8acefac4032d4ec4492804236976e335, type: 2}
+  - {fileID: 11400000, guid: fce15b98e483ca8458803dd3bbfbac0f, type: 2}
+  - {fileID: 11400000, guid: 30998036bd649924e8459f1e9e189051, type: 2}
   _initialHotbarCapacity: 9
   _initialCapacity: 45
 --- !u!114 &1267693798
@@ -2307,6 +2306,7 @@ MonoBehaviour:
   _toolsData:
   - {fileID: 11400000, guid: ae9f29e5f58d3e443b5da98b1c3f0e99, type: 2}
   - {fileID: 11400000, guid: 8be51214e3dc0d04caf59c488bd01ba5, type: 2}
+  - {fileID: 11400000, guid: 87e9bc6da995f894b9dfffdfd9698227, type: 2}
 --- !u!1 &1313326417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,7 +2481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 507}
+  m_AnchoredPosition: {x: 0, y: -375}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471994218
@@ -3356,7 +3356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 1499888888}
-  _harvestCropData: {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
   _currentCrop: {fileID: 0}
   _cropSlot: {fileID: 281742566}
 --- !u!4 &1829153188
@@ -68385,7 +68384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81911e8e8f0920b4ba5d5e174f52c59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputHandler: {fileID: 2044039970}
   _slotPrefab: {fileID: 1069265663377153237, guid: f2391111e2b898d469f78b3a3bebb9a0, type: 3}
   _selectedOutline: {fileID: 740757511}
 --- !u!4 &2076559190 stripped

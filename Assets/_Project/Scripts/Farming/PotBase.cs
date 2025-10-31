@@ -21,23 +21,20 @@ namespace Farming
     {
         public event Action StateChangedEvent;
 
-        [SerializeField] private SpriteRenderer _renderer;
+        public PotState CurrentState => _currentState;
 
-        [SerializeField] private ItemData _harvestCropData;
-
+        [Inject] private DiContainer _diContainer;
         [Inject] PotSceneContainer _sceneContainer;
         [Inject] InventoryModel _inventoryModel;
 
-        private Sprite _emptySprite;
-        private Sprite _dugSprite;
-
+        [SerializeField] private SpriteRenderer _renderer;
         [SerializeField] private CropBase _currentCrop;
         [SerializeField] private Transform _cropSlot;
-        [Inject] private DiContainer _diContainer;
 
+        private Sprite _emptySprite;
+        private Sprite _dugSprite;
+        private ItemData[] _harvestCropData;
         private PotState _currentState = PotState.Empty;
-
-        public PotState CurrentState => _currentState;
 
         private void Start()
         {
@@ -67,7 +64,7 @@ namespace Farming
             return _currentState switch
             {
                 PotState.Empty => typeof(ShovelTool),
-                PotState.Dug => null,
+                PotState.Dug => typeof(SeedsTool),
                 PotState.Planted => typeof(WateringCanTool),
                 PotState.ReadyToHarvest => null,
                 PotState.Dead => typeof(ShovelTool),
@@ -79,15 +76,6 @@ namespace Farming
         {
             switch (_currentState)
             {
-                case PotState.Empty:
-                    Dig();
-                    break;
-                case PotState.Dug:
-                    PlantSeeds(player.CropPrefab);
-                    break;
-                case PotState.Planted:
-                    WaterCrop();
-                    break;
                 case PotState.ReadyToHarvest:
                     Harvest();
                     break;
@@ -99,23 +87,21 @@ namespace Farming
 
         public void Dig()
         {
-            Debug.Log("Digged the pot");
             _renderer.sprite = _dugSprite;
             SetState(PotState.Dug);
         }
 
         public void WaterCrop()
         {
-            Debug.Log("Watered the pot");
             _currentCrop.Water();
         }
 
-        private void PlantSeeds(CropBase crop)
+        public void PlantSeeds(CropData cropData)
         {
-            Debug.Log("Planted seeds");
-            GameObject cropGO = _diContainer.InstantiatePrefab(crop.gameObject, _cropSlot);
-            _currentCrop = cropGO.GetComponent<CropBase>();
-            _currentCrop.Plant();
+            GameObject crop = _diContainer.InstantiatePrefab(_sceneContainer.CropBasePrefab, _cropSlot);
+            _currentCrop = crop.GetComponent<CropBase>();
+            _harvestCropData = cropData.HarvestItemData;
+            _currentCrop.Plant(cropData);
 
             _currentCrop.GrowUpEvent += On_CropGrowUp;
             _currentCrop.DieEvent += On_CropDied;
@@ -125,8 +111,10 @@ namespace Farming
 
         private void Harvest()
         {
-            Debug.Log("Harvested the plant");
-            _inventoryModel.AddItemToFirstFreeSlot(_harvestCropData, 1);
+            for (int i = 0; i < _harvestCropData.Length; i++)
+            {
+                _inventoryModel.AddItemToFirstFreeSlot(_harvestCropData[i], 1);
+            }
             ClearPlant();
         }
 

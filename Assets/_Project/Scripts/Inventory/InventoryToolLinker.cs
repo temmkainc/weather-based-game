@@ -21,7 +21,7 @@ namespace Inventory
 
         private void HandleItemSelected(InventoryItem item)
         {
-            if (item == null)
+            if (item == null || !(item.Data.Type == ItemType.Tool || item.Data.Type == ItemType.Seeds))
             {
                 _toolManager.SetTool(null);
                 return;

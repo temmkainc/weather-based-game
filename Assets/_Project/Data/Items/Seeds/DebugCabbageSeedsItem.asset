@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704d9487f8e3fa540895f67a0759011c, type: 3}
+  m_Name: DebugCabbageSeedsItem
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Debug Cabbage Seeds
+  <Icon>k__BackingField: {fileID: -2112919594, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  <Type>k__BackingField: 0
+  <IsStackable>k__BackingField: 1
+  <ToolReference>k__BackingField: {fileID: 11400000, guid: 87e9bc6da995f894b9dfffdfd9698227, type: 2}
+  <CropSeeds>k__BackingField: {fileID: 11400000, guid: 8c75154d24feaed44a7bb03413b892c5, type: 2}
