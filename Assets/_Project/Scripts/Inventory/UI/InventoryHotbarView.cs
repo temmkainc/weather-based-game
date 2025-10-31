@@ -16,6 +16,7 @@ namespace Inventory.UI
         [SerializeField] private Transform _selectedOutline;
 
         private Image[] _slotImages;
+        private TMP_Text[] _slotCountLabels;
 
         private void Start()
         {
@@ -51,15 +52,29 @@ namespace Inventory.UI
             for (int i = 0; i < _slotImages.Length; i++)
             {
                 var image = _slotImages[i];
-                if (i < hotbar.Length && hotbar[i] != null)
+                var countLabel = _slotCountLabels[i];
+                var item = hotbar[i];
+
+                if (item != null)
                 {
-                    image.sprite = hotbar[i].Data.Icon;
+                    image.sprite = item.Data.Icon;
                     image.color = Color.white;
+
+                    if (item.Quantity > 1)
+                    {
+                        countLabel.text = item.Quantity.ToString();
+                        countLabel.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        countLabel.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
                     image.sprite = null;
                     image.color = Color.clear;
+                    countLabel.gameObject.SetActive(false);
                 }
             }
         }
@@ -71,6 +86,7 @@ namespace Inventory.UI
 
             var hotbar = _hotbarManager.Hotbar;
             _slotImages = new Image[hotbar.Length];
+            _slotCountLabels = new TMP_Text[hotbar.Length];
 
             for (int i = 0; i < hotbar.Length; i++)
             {
@@ -80,6 +96,10 @@ namespace Inventory.UI
 
                 var slotIndex_TMP = slot.GetComponentsInChildren<TMP_Text>(includeInactive: true)
                     .FirstOrDefault(tmp => tmp.gameObject.name.Contains("Index"));
+
+                var itemCount_TMP = slot.GetComponentsInChildren<TMP_Text>(includeInactive: true)
+                    .FirstOrDefault(tmp => tmp.gameObject.name.Contains("Count"));
+                _slotCountLabels[i] = itemCount_TMP;
 
                 slotIndex_TMP.gameObject.SetActive(true);
                 slotIndex_TMP.text = (i + 1).ToString();
