@@ -1,5 +1,6 @@
 using Common;
 using Farming.Tools;
+using Inventory;
 using PlayerSystem;
 using System;
 using UnityEngine;
@@ -22,8 +23,13 @@ namespace Farming
 
         [SerializeField] private SpriteRenderer _renderer;
 
-        [SerializeField] private Sprite _emptySprite;
-        [SerializeField] private Sprite _dugSprite;
+        [SerializeField] private ItemData _harvestCropData;
+
+        [Inject] PotSceneContainer _sceneContainer;
+        [Inject] InventoryModel _inventoryModel;
+
+        private Sprite _emptySprite;
+        private Sprite _dugSprite;
 
         [SerializeField] private CropBase _currentCrop;
         [SerializeField] private Transform _cropSlot;
@@ -35,6 +41,11 @@ namespace Farming
 
         private void Start()
         {
+            var random = DeterministicRandom.Next(0, _sceneContainer.SpriteSets.Length);
+
+            _emptySprite = _sceneContainer.SpriteSets[random].EmptySprite;
+            _dugSprite = _sceneContainer.SpriteSets[random].DugSprite;
+
             _renderer.sprite = _emptySprite;
         }
 
@@ -115,6 +126,7 @@ namespace Farming
         private void Harvest()
         {
             Debug.Log("Harvested the plant");
+            _inventoryModel.AddItemToFirstFreeSlot(_harvestCropData, 1);
             ClearPlant();
         }
 

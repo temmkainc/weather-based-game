@@ -5,58 +5,32 @@ namespace Farming.Tools
 {
     public class ToolManager : MonoBehaviour
     {
-        [SerializeField] private ToolManagerSceneContainer _sceneContainer;
-        [SerializeField] private List<ToolData> _tools;
+        [SerializeField] private List<ToolData> _toolsData;
         private int _currentIndex;
 
-        public ToolData CurrentTool => _tools.Count > 0 ? _tools[_currentIndex] : null;
+        public ToolData CurrentTool => _toolsData.Count > 0 && _currentIndex != -1 ? _toolsData[_currentIndex] : null;
 
         private void Awake()
         {
             _currentIndex = 0;
-            UpdateToolUI();
         }
 
-        private void Update()
+        private void SetTool(int index)
         {
-            float scroll = Input.GetAxis("Mouse ScrollWheel");
-            if (scroll > 0)
-                NextTool();
-            else if (scroll < 0)
-                PreviousTool();
-        }
-
-        private void NextTool()
-        {
-            if (_tools.Count == 0) return;
-            int nextIndex = (_currentIndex + 1) % _tools.Count;
-            SetTool(nextIndex);
-        }
-
-        private void PreviousTool()
-        {
-            if (_tools.Count == 0) return;
-            int prevIndex = (_currentIndex - 1 + _tools.Count) % _tools.Count;
-            SetTool(prevIndex);
-        }
-
-        public void SetTool(int index)
-        {
-            if (index < 0 || index >= _tools.Count) return;
+            if (index < -1 || index >= _toolsData.Count) return;
             if (_currentIndex == index) return;
 
             _currentIndex = index;
-            UpdateToolUI();
         }
 
-        private void UpdateToolUI()
+        public void SetTool(ToolData tool)
         {
-            if (_sceneContainer == null || CurrentTool is not ToolData toolData)
+            if (tool == null)
+            {
+                SetTool(-1);
                 return;
-
-            _sceneContainer.CurrentToolImage.sprite = toolData.Icon;
-
-            Debug.Log($"Selected Tool: {CurrentTool.Name}");
+            }
+            SetTool(_toolsData.IndexOf(tool));
         }
     }
 }

@@ -27,12 +27,12 @@ namespace CameraSystem
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.LeftBracket))
             {
                 Rotate(-_rotationStep);
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.RightBracket))
             {
                 Rotate(_rotationStep);
             }
