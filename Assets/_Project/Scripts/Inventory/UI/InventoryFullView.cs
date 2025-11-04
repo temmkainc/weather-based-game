@@ -52,6 +52,7 @@ namespace Inventory.UI
             var item = _inventory.Items[index];
             _slotImages[index].enabled = false;
             _slotCountLabels[index].enabled = false;
+            _itemValueBarImages[index].enabled = false;
 
             if (_selectedSlotIndex == null)
             {
@@ -71,6 +72,7 @@ namespace Inventory.UI
 
             _slotImages[index].enabled = _slotImages[prevIndex].enabled = true;
             _slotCountLabels[index].enabled = _slotCountLabels[prevIndex].enabled = true;
+            _itemValueBarImages[index].enabled = _itemValueBarImages[prevIndex].enabled = true;
 
             _dragIcon.enabled = false;
             _dragQuantityTMP.enabled = false;

@@ -1,3 +1,4 @@
+using Farming.Tools;
 using System;
 
 namespace Inventory
@@ -7,5 +8,6 @@ namespace Inventory
     {
         public ItemData Data;
         public int Quantity;
+        public ToolData Tool => Data != null && Data.Type == ItemType.Tool ? Data.ToolReference : null;
     }
 }

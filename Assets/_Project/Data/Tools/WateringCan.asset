@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09b61b924b34904a8792c04d7ad0629, type: 3}
   m_Name: WateringCan
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Watering Can
-  <Icon>k__BackingField: {fileID: 926587797, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  HasValue: 1
+  <Capacity>k__BackingField: 100
+  <CurrentWaterAmount>k__BackingField: 95
+  <UsePerPlantWaterAmount>k__BackingField: 5

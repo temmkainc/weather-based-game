@@ -23,4 +23,7 @@ MonoBehaviour:
   - Sprite: {fileID: -1406747965, guid: 2f90c83a55af18540a98204358d91785, type: 3}
     TimeToNextStage: 2
   <WaterNeededToGrow>k__BackingField: 0.2
-  <HarvestItemData>k__BackingField: {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
+  <HarvestItemData>k__BackingField:
+  - {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
+  - {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}
+  - {fileID: 11400000, guid: 30998036bd649924e8459f1e9e189051, type: 2}
