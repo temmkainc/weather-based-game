@@ -6,16 +6,18 @@ namespace Inventory
 {
     public class InventoryModel
     {
-        public int Capacity { get; }
-        public InventoryItem SelectedItem { get; private set; }
-
-        private readonly InventoryItem[] _items;
         public IReadOnlyList<InventoryItem> Items => _items;
 
         public event Action<int, InventoryItem> OnItemAdded;
         public event Action<int, InventoryItem> OnItemRemoved;
         public event Action<int, InventoryItem> OnItemChanged;
         public event Action<InventoryItem> OnItemSelected;
+
+        public int Capacity { get; }
+        public InventoryItem SelectedItem { get; private set; }
+
+        private readonly ItemData[] _startingItems;
+        private readonly InventoryItem[] _items;
 
         public InventoryModel(int capacity, IEnumerable<ItemData> startingItems = null)
         {
@@ -24,13 +26,30 @@ namespace Inventory
 
             if (startingItems != null)
             {
-                int index = 0;
-                foreach (var data in startingItems.Where(i => i != null))
-                {
-                    if (index >= capacity) break;
-                    AddItemToSlot(index, data, 1);
-                    index++;
-                }
+                _startingItems = startingItems.Where(i => i != null).ToArray();
+            }
+            else
+            {
+                _startingItems = Array.Empty<ItemData>();
+            }
+
+            FillWithStartingItems();
+        }
+
+        private void FillWithStartingItems()
+        {
+            for (int i = 0; i < _items.Length; i++)
+            {
+                _items[i] = null;
+                OnItemChanged?.Invoke(i, null);
+            }
+
+            int index = 0;
+            foreach (var data in _startingItems)
+            {
+                if (index >= Capacity) break;
+                AddItemToSlot(index, data, 1);
+                index++;
             }
         }
 
@@ -144,6 +163,15 @@ namespace Inventory
                 _items[i] = null;
                 OnItemChanged?.Invoke(i, null);
             }
+        }
+        public void ResetToStartingItems()
+        {
+            Clear();
+
+            SelectedItem = null;
+            OnItemSelected?.Invoke(null);
+
+            FillWithStartingItems();
         }
     }
 }

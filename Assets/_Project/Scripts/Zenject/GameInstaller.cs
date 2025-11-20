@@ -19,6 +19,7 @@ namespace Common
             Container.DeclareSignal<RoundCompletedSignal>();
             Container.DeclareSignal<RoundFailedSignal>();
             Container.DeclareSignal<NextRoundRequestedSignal>();
+            Container.DeclareSignal<RestartGameSignal>();
 
             Container.BindInterfacesAndSelfTo<WeatherService>().AsSingle();
 

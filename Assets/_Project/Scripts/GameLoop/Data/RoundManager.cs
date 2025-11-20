@@ -22,11 +22,13 @@ namespace GameLoop
 
         private RoundObjectives _current;
         private int _roundIndex = 1;
+        private bool _roundEnded = false;
 
         [Inject]
         public void Construct(SignalBus signalBus)
         {
             signalBus.Subscribe<NextRoundRequestedSignal>(NextRound);
+            signalBus.Subscribe<RestartGameSignal>(RestartGame);
         }
 
         void Awake()
@@ -41,7 +43,7 @@ namespace GameLoop
 
         void Update()
         {
-            if (_current == null)
+            if (_current == null || _roundEnded)
                 return;
 
             _timer.Tick(Time.deltaTime);
@@ -61,6 +63,7 @@ namespace GameLoop
 
         private void NextRound()
         {
+            _roundEnded = false;
             _current = _generator.Generate(_roundIndex);
 
             _objectivesPanel.Open();
@@ -73,6 +76,9 @@ namespace GameLoop
 
         private void OnWin()
         {
+            if (_roundEnded) return;
+            _roundEnded = true;
+
             ClosePanels();
 
             _inventoryProcessor.ConsumeItems(_current);
@@ -84,8 +90,19 @@ namespace GameLoop
 
         private void OnLose()
         {
+            if (_roundEnded) return;
+            _roundEnded = true;
+
             ClosePanels();
             _signalBus.Fire(new RoundFailedSignal { RoundIndex = _roundIndex });
+        }
+
+        private void RestartGame()
+        {
+            _roundIndex = 0;
+            _current = null;
+            _inventory.ResetToStartingItems();
+            NextRound();
         }
 
         private void ClosePanels()

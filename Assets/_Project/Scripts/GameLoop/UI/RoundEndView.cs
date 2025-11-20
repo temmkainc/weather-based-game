@@ -21,6 +21,6 @@ public class GameUIController : MonoBehaviour
 
     private void OnRoundFailed(RoundFailedSignal signal)
     {
-        _losePanel.Close();
+        _losePanel.Open();
     }
 }
