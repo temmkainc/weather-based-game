@@ -12,11 +12,19 @@ namespace Inventory
         private void OnEnable()
         {
             _inventory.OnItemSelected += HandleItemSelected;
+            _inventory.OnItemChanged += HandleItemChanged;
         }
 
         private void OnDisable()
         {
             _inventory.OnItemSelected -= HandleItemSelected;
+            _inventory.OnItemChanged -= HandleItemChanged;
+        }
+
+        private void HandleItemChanged(int slot, InventoryItem item)
+        {
+            if (_inventory.SelectedItem == null)
+                _toolManager.SetTool(null);
         }
 
         private void HandleItemSelected(InventoryItem item)

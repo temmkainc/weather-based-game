@@ -2,6 +2,7 @@ using Common;
 using Inventory;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace GameLoop
@@ -99,10 +100,7 @@ namespace GameLoop
 
         private void RestartGame()
         {
-            _roundIndex = 0;
-            _current = null;
-            _inventory.ResetToStartingItems();
-            NextRound();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private void ClosePanels()
