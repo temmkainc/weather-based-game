@@ -134,6 +134,12 @@ namespace Inventory
                 _items[index] = null;
                 OnItemRemoved?.Invoke(index, item);
                 OnItemChanged?.Invoke(index, null);
+
+                if (SelectedItem == item)
+                {
+                    SelectedItem = null;
+                    OnItemSelected?.Invoke(null);
+                }
             }
             else
             {
@@ -142,6 +148,7 @@ namespace Inventory
 
             return true;
         }
+
 
         public void SelectItem(InventoryItem item)
         {
