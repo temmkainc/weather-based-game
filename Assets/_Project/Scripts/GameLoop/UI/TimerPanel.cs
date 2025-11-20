@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace GameLoop
 {
-    public class TimerView : MonoBehaviour
+    public class TimerPanel : PanelBase
     {
         [SerializeField] private Image _fillImage;
 

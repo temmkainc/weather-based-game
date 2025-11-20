@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704d9487f8e3fa540895f67a0759011c, type: 3}
   m_Name: DebugCabbageItem
   m_EditorClassIdentifier: 
-  <Id>k__BackingField: 3
-  <Name>k__BackingField: Debug Crop
+  <Name>k__BackingField: Debug Cabbage
   <Icon>k__BackingField: {fileID: -1406747965, guid: 2f90c83a55af18540a98204358d91785, type: 3}
   <Type>k__BackingField: 1
   <IsStackable>k__BackingField: 1
   <ToolReference>k__BackingField: {fileID: 0}
+  <CropSeeds>k__BackingField: {fileID: 0}

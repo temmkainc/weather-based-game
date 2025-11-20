@@ -4,7 +4,7 @@ using GameLoop;
 using System.Collections.Generic;
 using Inventory;
 
-public class ObjectivesView : MonoBehaviour
+public class ObjectivesPanel : PanelBase
 {
     [Inject] private ObjectiveListItem _objectiveListItemPrefab;
     [Inject] private InventoryModel _inventoryModel;

@@ -24,8 +24,8 @@ namespace Common
 
             Container.BindInstance(_cameraConfig).AsSingle();
 
-            Container.Bind<TimerView>().FromComponentInHierarchy().AsSingle();
-            Container.Bind<ObjectivesView>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<TimerPanel>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<ObjectivesPanel>().FromComponentInHierarchy().AsSingle();
 
             Container.Bind<ObjectiveListItem>().FromComponentInNewPrefab(_objectiveListItemPrefab).AsSingle().NonLazy();
         }
