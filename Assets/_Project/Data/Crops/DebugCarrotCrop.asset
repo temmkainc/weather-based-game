@@ -25,5 +25,5 @@ MonoBehaviour:
   <WaterNeededToGrow>k__BackingField: 0.2
   <HarvestItemData>k__BackingField:
   - {fileID: 11400000, guid: dbd8734f98d55be4f9f4ff33a3cb2648, type: 2}
-  - {fileID: 11400000, guid: dbd8734f98d55be4f9f4ff33a3cb2648, type: 2}
+  - {fileID: 11400000, guid: fce15b98e483ca8458803dd3bbfbac0f, type: 2}
   - {fileID: 11400000, guid: fce15b98e483ca8458803dd3bbfbac0f, type: 2}

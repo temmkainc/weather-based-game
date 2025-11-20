@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704d9487f8e3fa540895f67a0759011c, type: 3}
   m_Name: DebugCarrotItem
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Debug Crop
+  <Name>k__BackingField: Debug Carrot
   <Icon>k__BackingField: {fileID: -1904402912, guid: 2f90c83a55af18540a98204358d91785, type: 3}
   <Type>k__BackingField: 1
   <IsStackable>k__BackingField: 1
