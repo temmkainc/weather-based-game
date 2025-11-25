@@ -21,7 +21,7 @@ public class ObjectiveListItem : MonoBehaviour
 
     public void UpdateCount(int currentAmount)
     {
-        TMP.text = $"{currentAmount} / {_required}";
+        TMP.text = $"{currentAmount}/{_required}";
     }
 
     public ItemData Item => _item;

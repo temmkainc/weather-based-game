@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DebugCabbageItem
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Debug Cabbage
-  <Icon>k__BackingField: {fileID: -1406747965, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  <Icon>k__BackingField: {fileID: -573760632, guid: 2f90c83a55af18540a98204358d91785, type: 3}
   <Type>k__BackingField: 1
   <IsStackable>k__BackingField: 1
   <ToolReference>k__BackingField: {fileID: 0}

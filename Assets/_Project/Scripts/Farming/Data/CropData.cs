@@ -17,6 +17,7 @@ namespace Farming
     public struct GrowthStage
     {
         public Sprite Sprite;
+        public Sprite DeadSprite;
         public float TimeToNextStage;
     }
 }

@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -117,8 +130,8 @@ TextureImporter:
         y: 900
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.47631446, y: 0.5897638}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -179,7 +192,7 @@ TextureImporter:
       name: crops_spritesheet_3
       rect:
         serializedVersion: 2
-        x: 299
+        x: 300
         y: 900
         width: 100
         height: 100
@@ -271,8 +284,8 @@ TextureImporter:
         y: 800
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.5171677, y: 0.71815854}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -293,8 +306,8 @@ TextureImporter:
         y: 800
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.50071746, y: 0.67905337}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -315,8 +328,8 @@ TextureImporter:
         y: 800
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.4623288, y: 0.6878772}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -333,12 +346,12 @@ TextureImporter:
       name: crops_spritesheet_10
       rect:
         serializedVersion: 2
-        x: 499
+        x: 500
         y: 800
         width: 100
         height: 100
-      alignment: 9
-      pivot: {x: 0.47138855, y: 0.6735785}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -417,6 +430,94 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: crops_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e48f74e5d0838944b60c2d737089360
+      internalID: 1676315107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ba830f606c3be4ba9091908b9cb171
+      internalID: 2001551636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a448897aee868d439b414a8eff798b1
+      internalID: -573760632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crops_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 700
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b4cb87fdc0839499bbadedd3ebe19c
+      internalID: -676963286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -429,7 +530,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":100.0,"y":100.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       crops_spritesheet_0: 1196681177
       crops_spritesheet_1: -1691523159
@@ -437,6 +540,11 @@ TextureImporter:
       crops_spritesheet_11: -1471206992
       crops_spritesheet_12: -1083466885
       crops_spritesheet_13: -333505615
+      crops_spritesheet_14: 1676315107
+      crops_spritesheet_15: 2001551636
+      crops_spritesheet_16: -573760632
+      crops_spritesheet_17: -676963286
+      crops_spritesheet_18: -1053682423
       crops_spritesheet_2: -87398353
       crops_spritesheet_3: -1406747965
       crops_spritesheet_4: -2112919594
