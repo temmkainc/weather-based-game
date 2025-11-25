@@ -108,6 +108,8 @@ namespace Farming
         private void Die()
         {
             _isDead = true;
+            _renderer.sprite = _data.GrowthStages[_currentStage].DeadSprite;
+            _sceneContainer.GrowthBar.color = _sceneContainer.DeadGrowthBarColor;
             DieEvent?.Invoke();
             Debug.Log($"{_data.CropName} died.");
         }

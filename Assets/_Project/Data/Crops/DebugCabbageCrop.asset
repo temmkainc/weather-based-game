@@ -14,14 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CropName>k__BackingField: Debug Cabbage
   <GrowthStages>k__BackingField:
-  - Sprite: {fileID: 1196681177, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  - Sprite: {fileID: 1708625099, guid: b2279afd1792aa6459c519e24a782723, type: 3}
+    DeadSprite: {fileID: -1753085374, guid: c86b99ba33de62e40b650d5e2206da6b, type: 3}
     TimeToNextStage: 3
-  - Sprite: {fileID: -1691523159, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  - Sprite: {fileID: -256634989, guid: b2279afd1792aa6459c519e24a782723, type: 3}
+    DeadSprite: {fileID: 2066017360, guid: c86b99ba33de62e40b650d5e2206da6b, type: 3}
     TimeToNextStage: 3
-  - Sprite: {fileID: -87398353, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  - Sprite: {fileID: -872188347, guid: b2279afd1792aa6459c519e24a782723, type: 3}
+    DeadSprite: {fileID: 313421847, guid: c86b99ba33de62e40b650d5e2206da6b, type: 3}
     TimeToNextStage: 3
-  - Sprite: {fileID: -1406747965, guid: 2f90c83a55af18540a98204358d91785, type: 3}
-    TimeToNextStage: 2
+  - Sprite: {fileID: -1291913452, guid: b2279afd1792aa6459c519e24a782723, type: 3}
+    DeadSprite: {fileID: -1856727546, guid: c86b99ba33de62e40b650d5e2206da6b, type: 3}
+    TimeToNextStage: 4
+  - Sprite: {fileID: 1019926106, guid: b2279afd1792aa6459c519e24a782723, type: 3}
+    DeadSprite: {fileID: -937634692, guid: c86b99ba33de62e40b650d5e2206da6b, type: 3}
+    TimeToNextStage: 5
   <WaterNeededToGrow>k__BackingField: 0.2
   <HarvestItemData>k__BackingField:
   - {fileID: 11400000, guid: 9802c02007ccadc44bfaaeb17d913b34, type: 2}

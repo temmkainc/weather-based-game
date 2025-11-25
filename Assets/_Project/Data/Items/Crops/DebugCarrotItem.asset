@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DebugCarrotItem
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Debug Carrot
-  <Icon>k__BackingField: {fileID: -1904402912, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  <Icon>k__BackingField: {fileID: 2001551636, guid: 2f90c83a55af18540a98204358d91785, type: 3}
   <Type>k__BackingField: 1
   <IsStackable>k__BackingField: 1
   <ToolReference>k__BackingField: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DebugCarrotSeeds
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Debug Carrot Seeds
-  <Icon>k__BackingField: {fileID: -1471206992, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  <Icon>k__BackingField: {fileID: 436296715, guid: 9e22c3149cbc5b04cadfd13f29316aed, type: 3}
   <Type>k__BackingField: 0
   <IsStackable>k__BackingField: 1
   <ToolReference>k__BackingField: {fileID: 11400000, guid: 87e9bc6da995f894b9dfffdfd9698227, type: 2}

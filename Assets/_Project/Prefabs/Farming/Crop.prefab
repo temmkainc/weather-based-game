@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2742363, g: 0.78867924, b: 0.14136694, a: 1}
+  m_Color: {r: 0.47358483, g: 1, b: 0.6543705, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -176,8 +176,8 @@ Transform:
   m_GameObject: {fileID: 1287212969537148856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024, y: 0.0271, z: 0}
-  m_LocalScale: {x: 0.9301, y: 1.2448, z: 1}
+  m_LocalPosition: {x: -0.04, y: -0.54, z: -0.15}
+  m_LocalScale: {x: 0.72832626, y: 0.9747559, z: 0.7830623}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3060041177754021052}
@@ -202,10 +202,12 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 12b8dc81dab4e23468f39d8d05924474, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,10 +225,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1196681177, guid: 2f90c83a55af18540a98204358d91785, type: 3}
+  m_Sprite: {fileID: -786567847, guid: b2279afd1792aa6459c519e24a782723, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -295,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1372549, g: 0.5679775, b: 0.9607843, a: 1}
+  m_Color: {r: 0.42075467, g: 0.89527166, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -579,6 +582,7 @@ MonoBehaviour:
   <CropUI>k__BackingField: {fileID: 6420860423713524731}
   <WaterBar>k__BackingField: {fileID: 2954331704199559846}
   <GrowthBar>k__BackingField: {fileID: 3089293166657340203}
+  <DeadGrowthBarColor>k__BackingField: {r: 0.44845134, g: 0.93207544, b: 0.61407596, a: 0.41960785}
 --- !u!1 &8175775372206717384
 GameObject:
   m_ObjectHideFlags: 0

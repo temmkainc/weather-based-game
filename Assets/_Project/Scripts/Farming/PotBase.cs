@@ -67,7 +67,7 @@ namespace Farming
                 PotState.Dug => typeof(SeedsTool),
                 PotState.Planted => typeof(WateringCanTool),
                 PotState.ReadyToHarvest => null,
-                PotState.Dead => typeof(ShovelTool),
+                PotState.Dead => null,
                 _ => null,
             };
         }
@@ -120,6 +120,7 @@ namespace Farming
 
         private void ClearPlant()
         {
+            Debug.Log("Clear Plant called");
             Destroy(_currentCrop.gameObject);
             _currentCrop = null;
             _renderer.sprite = _emptySprite;
@@ -133,6 +134,7 @@ namespace Farming
 
         private void On_CropDied()
         {
+            Debug.Log("On_CropDied called");
             SetState(PotState.Dead);
         }
 
