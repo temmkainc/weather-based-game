@@ -21,5 +21,7 @@ namespace Inventory
 
         [field: SerializeField] public ToolData ToolReference { get; private set; }
         [field: SerializeField] public CropData CropSeeds { get; private set; }
+        [field: SerializeField] public int SellPrice { get; private set; }
+        [field: SerializeField] public int BuyPrice { get; private set; }
     }
 }

@@ -18,3 +18,5 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 1
   <ToolReference>k__BackingField: {fileID: 11400000, guid: 87e9bc6da995f894b9dfffdfd9698227, type: 2}
   <CropSeeds>k__BackingField: {fileID: 11400000, guid: ea7fe50c215d7b8408019777aa229637, type: 2}
+  <SellPrice>k__BackingField: 0
+  <BuyPrice>k__BackingField: 120

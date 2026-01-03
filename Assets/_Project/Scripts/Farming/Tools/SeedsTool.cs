@@ -25,7 +25,7 @@ namespace Farming.Tools
                 return;
 
             inventoryModel.RemoveItemAtSlot(player.InventoryHotbarManager.SelectedSlotIndex, 1);
-            pot.PlantSeeds(seedsItem.Data.CropSeeds);
+            pot.PlantSeeds(seedsItem.Data.CropSeeds, player);
         }
     }
 }

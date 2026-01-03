@@ -96,7 +96,7 @@ namespace Farming
             _currentCrop.Water();
         }
 
-        public void PlantSeeds(CropData cropData)
+        public void PlantSeeds(CropData cropData, Player player)
         {
             GameObject crop = _diContainer.InstantiatePrefab(_sceneContainer.CropBasePrefab, _cropSlot);
             _currentCrop = crop.GetComponent<CropBase>();
@@ -105,6 +105,7 @@ namespace Farming
 
             _currentCrop.GrowUpEvent += On_CropGrowUp;
             _currentCrop.DieEvent += On_CropDied;
+            _currentCrop.GrowUpEvent += () => player.Money = player.Money + 20;
 
             SetState(PotState.Planted);
         }
@@ -114,6 +115,7 @@ namespace Farming
             for (int i = 0; i < _harvestCropData.Length; i++)
             {
                 _inventoryModel.AddItemToFirstFreeSlot(_harvestCropData[i], 1);
+
             }
             ClearPlant();
         }
