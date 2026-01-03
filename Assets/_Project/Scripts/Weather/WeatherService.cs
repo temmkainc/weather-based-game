@@ -11,9 +11,7 @@ namespace WeatherSystem
     {
         private readonly SignalBus _signalBus;
 
-        //public url so I won`t hide it in .env or smth
-        private const string API_URL =
-            "https://api.open-meteo.com/v1/forecast?latitude=51.759&longitude=19.458&current_weather=true";
+        private const string API_URL = "https://api.open-meteo.com/v1/forecast?latitude=51.759&longitude=19.458&current_weather=true";
 
         [Inject]
         public WeatherService(SignalBus signalBus)

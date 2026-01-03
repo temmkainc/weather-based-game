@@ -7,6 +7,9 @@ namespace GameLoop
 {
     public class RoundGenerator
     {
+        private const float ROUND_TIME_BASE = 50;
+        private const float ROUND_TIME_INCREMENT_VALUE = 5;
+
         private readonly List<ItemData> _possibleItems;
 
         public RoundGenerator(List<ItemData> possibleItems)
@@ -20,7 +23,7 @@ namespace GameLoop
 
             var result = new RoundObjectives
             {
-                TimeLimit = 30 + round * 5
+                TimeLimit = ROUND_TIME_BASE + round * ROUND_TIME_INCREMENT_VALUE
             };
 
             List<ItemData> available = new List<ItemData>(_possibleItems);

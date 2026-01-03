@@ -28,11 +28,18 @@ namespace GameLoop
         [Inject]
         public void Construct(SignalBus signalBus)
         {
-            signalBus.Subscribe<NextRoundRequestedSignal>(NextRound);
-            signalBus.Subscribe<RestartGameSignal>(RestartGame);
+            _signalBus = signalBus;
+            _signalBus.Subscribe<NextRoundRequestedSignal>(NextRound);
+            _signalBus.Subscribe<RestartGameSignal>(RestartGame);
         }
 
-        void Awake()
+        private void OnDestroy()
+        {
+            _signalBus.Unsubscribe<NextRoundRequestedSignal>(NextRound);
+            _signalBus.Unsubscribe<RestartGameSignal>(RestartGame);
+        }
+
+        private void Awake()
         {
             _generator = new RoundGenerator(PossibleItems);
             _checker = new RoundObjectiveChecker(_inventory);
@@ -40,9 +47,9 @@ namespace GameLoop
             _timer = new RoundTimer();
         }
 
-        void Start() => NextRound();
+        private void Start() => NextRound();
 
-        void Update()
+        private void Update()
         {
             if (_current == null || _roundEnded)
                 return;
