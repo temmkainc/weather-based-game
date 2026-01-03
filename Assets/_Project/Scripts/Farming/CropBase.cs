@@ -7,6 +7,7 @@ namespace Farming
     {
         public event Action GrowUpEvent;
         public event Action DieEvent;
+        public event Action HarvestEvent;
 
         [Header("References")]
         [SerializeField] private CropData _data;
@@ -103,6 +104,7 @@ namespace Farming
             if (!_isReady) return;
             Debug.Log($"Harvested {_data.CropName}");
             Destroy(gameObject);
+            HarvestEvent?.Invoke();
         }
 
         private void Die()
