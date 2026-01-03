@@ -6,10 +6,15 @@ namespace PlayerSystem
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour
     {
-        public float moveSpeed = 5f;
+        [SerializeField] private float _moveSpeed = 5f;
+        [SerializeField] private PlayerVisuals _playerVisuals;
+
         private Rigidbody _rb;
         private InputSystem_Actions _input;
         private Vector2 _moveInput;
+        private float _lastMoveX;
+
+        private const float MOVE_THRESHOLD = 0.1f;
 
         private void Awake()
         {
@@ -35,9 +40,17 @@ namespace PlayerSystem
             _rb.constraints = RigidbodyConstraints.FreezeRotation;
         }
 
+
         private void On_Move(InputAction.CallbackContext context)
         {
             _moveInput = context.ReadValue<Vector2>();
+
+            _playerVisuals.SetIsMoving(_moveInput.magnitude > 0.1f);
+            if (Mathf.Abs(_moveInput.x) <= MOVE_THRESHOLD)
+                return;
+            
+            _lastMoveX = _moveInput.x;
+            _playerVisuals.SetFacing(_lastMoveX > 0);
         }
 
         private void FixedUpdate()
@@ -47,7 +60,7 @@ namespace PlayerSystem
 
             Vector3 moveDir = (right * _moveInput.x + forward * _moveInput.y).normalized;
 
-            Vector3 newPos = _rb.position + moveDir * moveSpeed * Time.fixedDeltaTime;
+            Vector3 newPos = _rb.position + moveDir * _moveSpeed * Time.fixedDeltaTime;
             _rb.MovePosition(newPos);
         }
     }
